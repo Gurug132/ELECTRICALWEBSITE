@@ -51,11 +51,26 @@ let index = 0;
 const text = "Powering Your World with Excellence";
 const typingText = document.querySelector('.typing-text');
 
+let descIndex = 0;
+const descText = "Expert electrical solutions for homes and businesses. Safe, efficient, and innovative.";
+const typingDescription = document.getElementById('typing-description');
+
 function typeWriter() {
     if (index < text.length) {
         typingText.innerHTML += text.charAt(index);
         index++;
         setTimeout(typeWriter, 50);
+    } else {
+        // Start typing the description after the heading is done
+        setTimeout(typeDescription, 500);
+    }
+}
+
+function typeDescription() {
+    if (descIndex < descText.length) {
+        typingDescription.innerHTML += descText.charAt(descIndex);
+        descIndex++;
+        setTimeout(typeDescription, 30);
     }
 }
 
