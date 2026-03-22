@@ -234,7 +234,7 @@ const serviceDetails = {
                 <li>Energy-efficient cable installations</li>
                 <li>Code compliance verification</li>
             </ul>
-            <div class="modal-price">Starting from $2,500</div>
+            <div class="modal-price">Starting from ₹15,500</div>
         `
     },
     maintenance: {
@@ -248,7 +248,7 @@ const serviceDetails = {
                 <li>Circuit breaker maintenance</li>
                 <li>Emergency repair services</li>
             </ul>
-            <div class="modal-price">Starting from $150</div>
+            <div class="modal-price">Starting from ₹750</div>
         `
     },
     installation: {
@@ -262,7 +262,7 @@ const serviceDetails = {
                 <li>Appliance circuit installations</li>
                 <li>Generator installations</li>
             </ul>
-            <div class="modal-price">Starting from $500</div>
+            <div class="modal-price">Starting from ₹2500</div>
         `
     },
     smart: {
@@ -276,7 +276,7 @@ const serviceDetails = {
                 <li>Voice control setup</li>
                 <li>Energy monitoring systems</li>
             </ul>
-            <div class="modal-price">Starting from $1,200</div>
+            <div class="modal-price">Starting from ₹12,200</div>
         `
     },
     emergency: {
