@@ -446,8 +446,8 @@ multiStepForm.addEventListener('submit', function(e) {
     const spinner = document.getElementById('loadingSpinner');
     spinner.style.display = 'flex';
 
-    // Create WhatsApp message with form details
-    const whatsappMessage = `🔔 *NEW ELECTROTECH INQUIRY* 🔔%0A%0A👤 *Customer Details:*%0A• Name: ${data.name}%0A• Phone: ${data.phone}%0A• Email: ${data.email}%0A%0A🔧 *Service Request:*%0A• Service Type: ${data.service}%0A• Urgency Level: ${data.urgency}%0A• Project Details: ${data.message}%0A%0A📅 *Submitted:* ${new Date().toLocaleString()}%0A%0A⚡ *ElectroTech - Your Electrical Experts*%0A💡 We will contact you within 2 hours!`;
+    // Create WhatsApp message with form details (plain newlines, then URI-encode)
+    const whatsappMessage = `🔔 *NEW ELECTROTECH INQUIRY* 🔔\n\n👤 *Customer Details:*\n• Name: ${data.name}\n• Phone: ${data.phone}\n• Email: ${data.email}\n\n🔧 *Service Request:*\n• Service Type: ${data.service}\n• Urgency Level: ${data.urgency}\n• Project Details: ${data.message}\n\n📅 *Submitted:* ${new Date().toLocaleString()}\n\n⚡ *ElectroTech - Your Electrical Experts*\n💡 We will contact you within 2 hours!`;
 
     // WhatsApp URL
     const whatsappNumber = '7026142341'; // Your WhatsApp business number
@@ -565,12 +565,12 @@ servicePopupForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Format WhatsApp message
-    const message = `🔔 *QUICK SERVICE REQUEST* 🔔%0A%0A👤 *Customer:* ${data.name}%0A📞 *Phone:* ${data.phone}%0A🔧 *Service Needed:* ${data.service}%0A📝 *Description:* ${data.message}%0A%0A⏰ *Submitted:* ${new Date().toLocaleString()}%0A%0A⚡ *ElectroTech Emergency Response*%0A💡 We'll call you within 30 minutes!`;
+    // Format WhatsApp message with newlines and URL encode
+    const message = `🔔 *QUICK SERVICE REQUEST* 🔔\n\n👤 *Customer:* ${data.name}\n📞 *Phone:* ${data.phone}\n🔧 *Service Needed:* ${data.service}\n📝 *Description:* ${data.message}\n\n⏰ *Submitted:* ${new Date().toLocaleString()}\n\n⚡ *ElectroTech Emergency Response*\n💡 We'll call you within 30 minutes!`;
 
     // Create WhatsApp URL (replace with your actual WhatsApp business number)
     const whatsappNumber = '7026142341'; // Replace with your WhatsApp business number
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp
     window.open(whatsappURL, '_blank');
