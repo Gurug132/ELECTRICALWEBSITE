@@ -5,46 +5,51 @@ AOS.init({
     offset: 100
 });
 
-// Initialize Particles.js
-particlesJS('particles-js', {
-    particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#00d2ff' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: '#00d2ff',
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: 'none',
-            random: true,
-            straight: false,
-            out_mode: 'out',
-            bounce: false
-        }
-    },
-    interactivity: {
-        detect_on: 'canvas',
-        events: {
-            onhover: { enable: true, mode: 'repulse' },
-            onclick: { enable: true, mode: 'push' },
-            resize: true
-        }
-    },
-    retina_detect: true
-});
+// Check if device is mobile
+const isMobile = window.innerWidth <= 768;
 
-// Typing Animation for Hero
-const typingText = document.getElementById('typing-text');
-const text = "Powering Your Future with Reliable Electric Services";
+// Initialize Particles.js only on desktop
+if (!isMobile) {
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#00d2ff' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#00d2ff',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            }
+        },
+        retina_detect: true
+    });
+}
+
+// Typing Effect for Hero Text
 let index = 0;
+const text = "Powering Your World with Excellence";
+const typingText = document.querySelector('.typing-text');
 
 function typeWriter() {
     if (index < text.length) {
@@ -57,6 +62,14 @@ function typeWriter() {
 window.addEventListener('load', () => {
     setTimeout(typeWriter, 1000);
 });
+
+// Floating elements animation - only on desktop
+if (!isMobile) {
+    const floatingElements = document.querySelectorAll('.floating-element');
+    floatingElements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 0.5}s`;
+    });
+}
 
 // Counter Animation
 function animateCounter(element, target) {

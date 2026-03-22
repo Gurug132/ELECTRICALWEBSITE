@@ -1431,6 +1431,16 @@ body.light-theme .form-group textarea {
 
 /* Enhanced Responsive Design */
 @media (max-width: 768px) {
+    /* Hide floating elements on mobile for better performance */
+    .floating-elements {
+        display: none;
+    }
+
+    /* Disable particles on mobile */
+    #particles-js {
+        display: none;
+    }
+
     .nav-links {
         display: none;
     }
@@ -1455,12 +1465,16 @@ body.light-theme .form-group textarea {
 
     .stat-item {
         padding: 15px;
+        flex-direction: row;
+        text-align: left;
+        justify-content: flex-start;
     }
 
     .stat-icon {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+        margin-right: 15px;
     }
 
     .stat-number {
@@ -1522,24 +1536,69 @@ body.light-theme .form-group textarea {
 
     .hero-content h1 {
         font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.4;
     }
 
     .services h2,
     .about-text h2,
     .testimonials h2,
-    .contact h2 {
-        font-size: 2rem;
+    .contact h2,
+    .why-choose-us h2 {
+        font-size: 1.8rem;
     }
 
     .hero-stats {
         gap: 15px;
+        padding: 0 10px;
     }
 
     .stat-item {
-        text-align: center;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .stat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    /* Improve button touch targets */
+    .cta-btn,
+    .service-btn,
+    .modal-cta,
+    .popup-submit-btn {
+        min-height: 48px;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    /* Better modal sizing */
+    .modal-content {
+        margin: 20px auto;
+        width: 95%;
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    /* Improve form inputs */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 16px; /* Prevents zoom on iOS */
     }
 }
