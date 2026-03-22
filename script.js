@@ -248,7 +248,7 @@ const serviceDetails = {
                 <li>Circuit breaker maintenance</li>
                 <li>Emergency repair services</li>
             </ul>
-            <div class="modal-price">Starting from ₹750</div>
+            <div class="modal-price">Starting from ₹850</div>
         `
     },
     installation: {
@@ -276,7 +276,7 @@ const serviceDetails = {
                 <li>Voice control setup</li>
                 <li>Energy monitoring systems</li>
             </ul>
-            <div class="modal-price">Starting from ₹12,200</div>
+            <div class="modal-price">Starting from ₹12,500</div>
         `
     },
     emergency: {
